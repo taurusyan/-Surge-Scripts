@@ -1,0 +1,9 @@
+#!name=🔍 携程接口诊断 v1
+#!desc=用于定位携程当前 API 接口。仅记录域名、路径、方法等结构信息，不记录 Cookie/Token。
+#!system=ios
+
+[Script]
+携程诊断[请求] = type=http-request,pattern=^https:\/\/(?:[^\/]+\.)?(?:ctrip\.com|c-ctrip\.com)\/,requires-body=0,timeout=10,script-path=https://raw.githubusercontent.com/taurusyan/-Surge-Scripts/main/Ctrip-Debug.js
+
+[MITM]
+hostname = %APPEND% *.ctrip.com, *.c-ctrip.com
